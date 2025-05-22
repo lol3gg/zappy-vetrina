@@ -1,0 +1,200 @@
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Starter Kit - Zappy</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Segoe+UI:400,700&display=swap">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #0c0c15;
+      color: white;
+      scroll-behavior: smooth;
+    }
+    nav {
+      background: #0c0c15;
+      display: flex;
+      justify-content: space-between;
+      padding: 0.5rem 2rem;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 1.5rem;
+    }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+    }
+    .cta {
+      background: linear-gradient(90deg, #39D9A9, #00C2FF);
+      color: white;
+      padding: 0.7rem 1.5rem;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .hero {
+      background: linear-gradient(160deg, #10101A 60%, #141421);
+      padding: 6rem 2rem 3rem;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 800px;
+      margin: auto;
+      line-height: 1.6;
+    }
+
+    .section {
+      padding: 4rem 2rem;
+      max-width: 1200px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .feature-box {
+      background: #1a1a2e;
+      border-radius: 16px;
+      padding: 2rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 12px rgba(0,0,0,0.3);
+      cursor: pointer;
+      position: relative;
+    }
+
+    .feature-box:hover {
+      transform: scale(1.03);
+    }
+
+    .feature-box h3 {
+      color: #39D9A9;
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .popup-description {
+      display: none;
+      position: absolute;
+      bottom: -100%;
+      left: 0;
+      width: 100%;
+      background: linear-gradient(135deg, rgba(57,217,169,0.95), rgba(0,194,255,0.95));
+      color: black;
+      border-radius: 0 0 16px 16px;
+      padding: 1rem;
+      font-size: 0.95rem;
+      transition: bottom 0.4s ease;
+      z-index: 9;
+    }
+
+    .feature-box.active .popup-description {
+      display: block;
+      bottom: 0;
+    }
+
+    .back-btn {
+      margin-top: 3rem;
+      display: inline-block;
+      text-decoration: none;
+      color: white;
+      background: linear-gradient(90deg, #39D9A9, #00C2FF);
+      padding: 0.8rem 1.6rem;
+      border-radius: 30px;
+      font-weight: bold;
+    }
+
+    footer {
+      background: #0c0c15;
+      padding: 2rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #999;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">Zappy</div>
+    <ul>
+      <li><a href="index.html#funzionalita">Funzionalità</a></li>
+      <li><a href="index.html#prezzi">Prezzi</a></li>
+      <li><a href="index.html#contatti">Contatti</a></li>
+    </ul>
+    <a class="cta" href="https://wa.me/393791243514" target="_blank">Inizia ora</a>
+  </nav>
+
+  <section class="hero">
+    <h1>Starter Kit & Prezzi</h1>
+    <p>Tutto quello che ti serve per attivare Zappy nel tuo locale in meno di 10 minuti.</p>
+  </section>
+
+  <section class="section">
+    <h2 style="font-size: 2rem;">Cosa include lo Starter Kit</h2>
+    <div class="feature-grid">
+      <div class="feature-box" onclick="toggleBox(this)">
+        <h3>Stampante termica</h3>
+        <p>Per ricevere le comande istantaneamente.</p>
+        <div class="popup-description">Inclusa nel kit: stampa automatica degli ordini con taglio carta e configurazione semplificata.</div>
+      </div>
+      <div class="feature-box" onclick="toggleBox(this)">
+        <h3>QR Code personalizzati</h3>
+        <p>Uno per ogni tavolo, con numero e logo.</p>
+        <div class="popup-description">Ricevi i QR adesivi già pronti da attaccare ai tavoli. Ordine diretto senza app.</div>
+      </div>
+      <div class="feature-box" onclick="toggleBox(this)">
+        <h3>Configurazione & installazione</h3>
+        <p>Fatto da noi, tutto pronto all'uso.</p>
+        <div class="popup-description">Pensiamo noi a creare il tuo menù e configurare tutto. Devi solo collegare la stampante.</div>
+      </div>
+      <div class="feature-box" onclick="toggleBox(this)">
+        <h3>Assistenza & aggiornamenti</h3>
+        <p>Sempre inclusi con l’abbonamento.</p>
+        <div class="popup-description">Non sei mai solo: supporto via WhatsApp e aggiornamenti continui inclusi.</div>
+      </div>
+    </div>
+
+    <h2 style="margin-top: 4rem; font-size: 2rem;">Prezzo</h2>
+    <p style="font-size: 1.2rem;"><strong>Kit iniziale:</strong> 200€ una tantum<br><strong>Abbonamento mensile:</strong> 69,90€ tutto incluso</p>
+
+    <a class="back-btn" href="index.html">← Torna alla Home</a>
+  </section>
+
+  <footer>
+    &copy; 2025 Zappy. Tutti i diritti riservati.
+  </footer>
+
+  <script>
+    function toggleBox(el) {
+      const boxes = document.querySelectorAll('.feature-box');
+      boxes.forEach(box => {
+        if (box !== el) box.classList.remove('active');
+      });
+      el.classList.toggle('active');
+    }
+  </script>
+
+</body>
+</html>

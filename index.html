@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Zappy - Soluzione per Ordinare e Pagare</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #0c0c15;
+      color: white;
+    }
+
+    nav {
+      background: #0c0c15;
+      display: flex;
+      justify-content: space-between;
+      padding: 0.5rem 2rem;
+      align-items: center;
+      position: sticky;
+      top: 20px;
+      z-index: 9;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 1.5rem;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .cta {
+      background: linear-gradient(90deg, #39D9A9, #00C2FF);
+      color: white;
+      padding: 0.7rem 1.5rem;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .hero {
+      padding: 6rem 2rem;
+      margin-top: 20px;
+      text-align: center;
+      background: linear-gradient(160deg, #10101A 60%, #141421);
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero span {
+      color: #39D9A9;
+    }
+
+    .hero-images {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .hero-images img {
+      max-width: 200px;
+      border-radius: 12px;
+      border: 1px solid #444;
+    }
+
+    .section {
+      padding: 4rem 2rem;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .section h2 {
+      text-align: center;
+      font-size: 2.2rem;
+      margin-bottom: 2rem;
+    }
+
+    .grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    .card {
+      background: #1a1a2e;
+      border-radius: 12px;
+      padding: 2rem;
+      width: 300px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      text-align: center;
+    }
+
+    .card h3 {
+      color: #39D9A9;
+    }
+
+    .banner {
+      background: #39D9A9;
+      text-align: center;
+      padding: 2rem;
+      color: #000;
+      font-weight: bold;
+      font-size: 1.3rem;
+      margin-top: 2rem;
+      border-radius: 10px;
+    }
+
+    .banner a {
+      display: inline-block;
+      background: black;
+      color: white;
+      padding: 0.7rem 1.5rem;
+      margin-top: 1rem;
+      border-radius: 30px;
+      text-decoration: none;
+    }
+
+    footer {
+      background: #0c0c15;
+      padding: 2rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #999;
+    }
+
+    .popup {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: #39D9A9;
+      color: black;
+      padding: 0.5rem 2rem;
+      text-align: center;
+      font-weight: bold;
+      z-index: 100;
+    }
+
+    .popup a {
+      margin-left: 2rem;
+      color: #000;
+      font-weight: bold;
+    }
+
+    .popup-spacer {
+      height: 60px;
+    }
+
+    .mobile-hide-on-small {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .mobile-hide-on-small {
+    display: none;
+  }
+      .hero-images {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  
+    .mobile-only {
+      display: none;
+    }
+    @media (max-width: 768px) {
+      .mobile-only {
+        display: block;
+      }
+    }
+
+  
+    .gradient-text {
+      background: linear-gradient(90deg, #39D9A9, #00C2FF);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+  
+@media (max-width: 768px) {
+  .hero {
+    padding-top: 0.5rem;
+    padding-bottom: 4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding-top: 0.5rem;
+    padding-bottom: 4rem;
+  }
+
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+}
+
+    .app-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .app-box {
+      width: 160px;
+      height: 60px;
+      border-radius: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      font-weight: bold;
+      color: black;
+      font-size: 1.1rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
+
+    .app-box img {
+      width: 25px;
+      height: 25px;
+    }
+
+    @media (max-width: 768px) {
+      .app-box {
+        width: 100%;
+        max-width: 300px;
+      }
+    }
+
+  
+@media (max-width: 768px) {
+  .hero {
+    padding-top: 0.5rem;
+    padding-bottom: 2rem;
+  }
+
+  .hero h1 {
+    font-size: 1.7rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+    margin-bottom: 0;
+  }
+
+  .section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .section {
+    padding: 2rem 1rem;
+  }
+
+  .app-box {
+    height: 50px;
+    font-size: 1rem;
+  }
+
+  .app-box img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .app-grid {
+    gap: 0.8rem;
+  }
+}
+
+    .static-gradient-text {
+      font-weight: bold;
+      font-size: 1.8rem;
+      background: linear-gradient(90deg, #39D9A9, #00C2FF);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+  
+    .chrome-style {
+      background: linear-gradient(135deg, #127A61, #39D9A9 30%, #00C2FF 70%, #ffffff);
+      box-shadow: inset 0 1px 1px rgba(255,255,255,0.3),
+                  inset 0 -1px 1px rgba(0,0,0,0.1),
+                  0 3px 8px rgba(0,0,0,0.2);
+      color: black;
+    }
+
+  
+    @media (max-width: 768px) {
+      .app-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: center;
+      }
+      .app-grid .app-box:nth-child(5) {
+        grid-column: 1 / span 2;
+        justify-self: center;
+      }
+    }
+
+  
+.zappy-grid-section {
+  padding: 4rem 1rem;
+  width: 100%;
+  max-width: 1400px;
+  margin: auto;
+}
+
+.zappy-grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+  align-items: stretch;
+}
+
+.zappy-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.5rem;
+  border-radius: 16px;
+  text-align: center;
+  color: white;
+  background: #333;
+  box-shadow: 0 0 12px rgba(0,0,0,0.2);
+  transition: transform 0.2s;
+}
+
+.zappy-card:hover {
+  transform: scale(1.02);
+}
+
+.zappy-card h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.zappy-card img {
+  width: 100%;
+  max-height: 160px;
+  object-fit: contain;
+  margin-top: auto;
+}
+
+
+.feature-box {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+.feature-box:hover {
+  opacity: 0.95;
+}
+</style>
+</head>
+<body>
+
+  <div class="popup">
+    🎁 Guarda ora la DEMO gratuita →
+    <a href="https://zappy-24d29.web.app" target="_blank">Vai al sito</a>
+  </div>
+  <div class="popup-spacer"></div>
+
+  <nav>
+    <div class="logo mobile-hide-on-small">Zappy</div>
+    <ul>
+      <li><a href="#funzionalita">Funzionalità</a></li>
+      <li><a href="#prezzi">Prezzi</a></li>
+      <li><a href="#contatti">Contatti</a></li>
+    </ul>
+    <a class="cta mobile-hide-on-small" href="https://wa.me/393791243514" target="_blank">Inizia ora</a>
+  </nav>
+  <div class="mobile-only" style="text-align: center; margin: 1rem 0;">
+    <a class="cta" href="https://wa.me/393791243514" target="_blank">Inizia ora</a>
+  </div>
+
+
+  <section class="hero">
+    <h1>Il modo più <span class="gradient-text"><em>VELOCE</em></span> per servire i tuoi clienti.</h1>
+    <p>Ordina e paga con un tap. Niente code, niente app da scaricare.</p>  </section>
+
+  
+<section class="section" style="text-align:center;">
+  <h2 class="static-gradient-text">L'unico sistema con app integrate (opzionali)</h2>
+  
+
+
+
+<div class="app-grid">
+  <div class="app-box-container">
+    <div class="app-box chrome-style">
+      <img src="immagini/qr_cuore.png" alt="Zappy Love" />
+      <span>Zappy</span>
+      <span class="arrow" onclick="togglePopup(1)">▼</span>
+    </div>
+    <div class="popup-box" id="popup-1">
+      <div class="popup-content">
+        <span class="close" onclick="togglePopup(1)">✕</span>
+        <p>Descrizione dell'app Zappy Love...</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="app-box-container">
+    <div class="app-box chrome-style">
+      <img src="immagini/qr_bambino.png" alt="Zappy Baby" />
+      <span>Zappy</span>
+      <span class="arrow" onclick="togglePopup(2)">▼</span>
+    </div>
+    <div class="popup-box" id="popup-2">
+      <div class="popup-content">
+        <span class="close" onclick="togglePopup(2)">✕</span>
+        <p>Descrizione dell'app Zappy Baby...</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="app-box-container">
+    <div class="app-box chrome-style">
+      <img src="immagini/qr_game.png" alt="Zappy Game" />
+      <span>Zappy</span>
+      <span class="arrow" onclick="togglePopup(3)">▼</span>
+    </div>
+    <div class="popup-box" id="popup-3">
+      <div class="popup-content">
+        <span class="close" onclick="togglePopup(3)">✕</span>
+        <p>Descrizione dell'app Zappy Game...</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="app-box-container">
+    <div class="app-box chrome-style">
+      <img src="immagini/qr_wifi.png" alt="Zappy WiFi" />
+      <span>Zappy</span>
+      <span class="arrow" onclick="togglePopup(4)">▼</span>
+    </div>
+    <div class="popup-box" id="popup-4">
+      <div class="popup-content">
+        <span class="close" onclick="togglePopup(4)">✕</span>
+        <p>Descrizione dell'app Zappy WiFi...</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="app-box-container">
+    <div class="app-box chrome-style">
+      <img src="immagini/qr_rainbow.png" alt="Zappy Rainbow" />
+      <span>Zappy</span>
+      <span class="arrow" onclick="togglePopup(5)">▼</span>
+    </div>
+    <div class="popup-box" id="popup-5">
+      <div class="popup-content">
+        <span class="close" onclick="togglePopup(5)">✕</span>
+        <p>Descrizione dell'app Zappy Rainbow...</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+</section>
+
+
+  <section id="funzionalita" class="section">
+    <h2>Funzionalità di Zappy</h2>
+    <div class="grid">
+      <div class="card">
+        <a href="come-funziona.html" class="feature-box"><h3>Come funziona</h3>
+        <p>Scopri come Zappy semplifica il servizio: QR, comande e pagamenti in un flusso continuo.</a></p>
+      </div>
+      <div class="card">
+        <a href="starter-kit.html" class="feature-box"><h3>Starter kit e prezzi</h3>
+        <p>Tutto quello che ti serve per partire: hardware, abbonamenti, installazione e supporto.</a></p>
+      </div>
+      <div class="card">
+        <h3>Comanda automatica</h3>
+        <p>La stampante riceve l’ordine in tempo reale, senza attese.</p>
+      </div>
+      <div class="card">
+        <h3>Dashboard bar</h3>
+        <p>Ogni bar gestisce menù, prezzi e stampanti con un click.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="banner">
+    Scopri lo Starter Kit completo<br>
+    <a href="https://wa.me/393791243514" target="_blank">Richiedi informazioni</a>
+  </div>
+
+  <section id="prezzi" class="section">
+    <h2>Prezzi</h2>
+    <p><strong>Kit iniziale:</strong> 200€</p>
+    <p><strong>Abbonamento mensile:</strong> 69,90€ tutto incluso</p>
+    <a class="cta" href="https://wa.me/393791243514" target="_blank" style="margin-top: 1.5rem; display: inline-block; text-align: center;">Inizia ora</a>
+  </section>
+
+  <section id="contatti" class="section">
+    <h2>Contattaci</h2>
+    <p>Vuoi portare Zappy nel tuo locale? Scrivici su WhatsApp.</p>
+    <a href="https://wa.me/393791243514" class="cta">Contattaci ora</a>
+  </section>
+
+  
+<section class="zappy-grid-section">
+  <h2 class="static-gradient-text" style="text-align: center; margin-bottom: 2rem;">Scopri tutto ciò che puoi fare con Zappy</h2>
+  <div class="zappy-grid-container">
+    <div class="zappy-card" style="background: linear-gradient(135deg, #39D9A9, #00C2FF);">
+      <h3>Order & Pay</h3>
+      <img src="immagini/zappy_orderpay.webp" alt="Order & Pay" />
+    </div>
+    <div class="zappy-card" style="background: linear-gradient(135deg, #127A61, #39D9A9);">
+      <h3>Paga al Tavolo</h3>
+      <img src="immagini/zappy_pagatavolo.webp" alt="Paga al Tavolo" />
+    </div>
+    <div class="zappy-card" style="background: linear-gradient(135deg, #00C2FF, #39D9A9);">
+      <h3>Menù Digitale</h3>
+      <img src="immagini/zappy_menu.webp" alt="Menù Digitale" />
+    </div>
+    <div class="zappy-card" style="background: linear-gradient(135deg, #0e4f6c, #39D9A9);">
+      <h3>Dashboard & Statistiche</h3>
+      <img src="immagini/zappy_stats.webp" alt="Dashboard" />
+    </div>
+  </div>
+</section>
+
+<footer>
+    &copy; 2025 Zappy. Tutti i diritti riservati.
+  </footer>
+
+
+<style>
+  .arrow {
+    cursor: pointer;
+    font-size: 1.5rem;
+    margin-left: 0.3rem;
+  }
+  .popup-box {
+    display: none;
+    background: #39D9A9;
+    color: black;
+    border-radius: 12px;
+    margin: 0.5rem auto;
+    padding: 1rem;
+    width: 90%;
+    max-width: 400px;
+  }
+  .popup-content {
+    position: relative;
+  }
+  .popup-content .close {
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    cursor: pointer;
+    font-size: 1.2rem;
+  }
+
+.zappy-grid-section {
+  padding: 4rem 1rem;
+  width: 100%;
+  max-width: 1400px;
+  margin: auto;
+}
+
+.zappy-grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+  align-items: stretch;
+}
+
+.zappy-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.5rem;
+  border-radius: 16px;
+  text-align: center;
+  color: white;
+  background: #333;
+  box-shadow: 0 0 12px rgba(0,0,0,0.2);
+  transition: transform 0.2s;
+}
+
+.zappy-card:hover {
+  transform: scale(1.02);
+}
+
+.zappy-card h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.zappy-card img {
+  width: 100%;
+  max-height: 160px;
+  object-fit: contain;
+  margin-top: auto;
+}
+
+
+.feature-box {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+.feature-box:hover {
+  opacity: 0.95;
+}
+</style>
+
+
+<script>
+  function togglePopup(id) {
+    // Chiudi tutti i popup
+    const allPopups = document.querySelectorAll('.popup-box');
+    allPopups.forEach(p => {
+      if (p.id !== "popup-" + id) {
+        p.style.display = "none";
+      }
+    });
+
+    // Alterna quello cliccato
+    const el = document.getElementById("popup-" + id);
+    if (el.style.display === "block") {
+      el.style.display = "none";
+    } else {
+      el.style.display = "block";
+    }
+  }
+</script>
+
+
+
+<style>
+  .arrow {
+    cursor: pointer;
+    font-size: 1.2rem;
+    margin-left: 0.3rem;
+  }
+
+  .app-box-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .popup-box {
+    display: none;
+    position: absolute;
+    top: 70px;
+    background: linear-gradient(135deg, rgba(57, 217, 169, 0.9), rgba(0, 194, 255, 0.9));;
+    color: black;
+    border-radius: 12px;
+    padding: 1rem;
+    width: 260px;
+    z-index: 10;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  }
+
+  .popup-content {
+    position: relative;
+    font-size: 0.95rem;
+  }
+
+  .popup-content .close {
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    cursor: pointer;
+    font-size: 1.2rem;
+  }
+
+.zappy-grid-section {
+  padding: 4rem 1rem;
+  width: 100%;
+  max-width: 1400px;
+  margin: auto;
+}
+
+.zappy-grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+  align-items: stretch;
+}
+
+.zappy-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.5rem;
+  border-radius: 16px;
+  text-align: center;
+  color: white;
+  background: #333;
+  box-shadow: 0 0 12px rgba(0,0,0,0.2);
+  transition: transform 0.2s;
+}
+
+.zappy-card:hover {
+  transform: scale(1.02);
+}
+
+.zappy-card h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.zappy-card img {
+  width: 100%;
+  max-height: 160px;
+  object-fit: contain;
+  margin-top: auto;
+}
+
+
+.feature-box {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+.feature-box:hover {
+  opacity: 0.95;
+}
+</style>
+
+</body>
+</html>

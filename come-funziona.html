@@ -1,0 +1,279 @@
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Come funziona Zappy</title>
+<style>
+    body {
+      background-color: #0d0d0d;
+      color: white;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2em;
+      margin-top: 40px;
+    }
+
+    .highlight {
+      color: #39D9A9;
+    }
+
+    h2 {
+      margin-top: 40px;
+      font-size: 1.5em;
+    }
+
+    .carousel-container {
+      margin: 40px auto;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .carousel-track {
+      display: flex;
+      scroll-snap-type: x mandatory;
+    }
+
+    .carousel-item {
+      margin: 0 12px;
+      flex: 0 0 80vw;
+      margin: 0 auto;
+      background-color: #1a1a1a;
+      border-radius: 10px;
+      scroll-snap-align: center;
+      padding: 20px;
+      box-sizing: border-box;
+      text-align: left;
+    }
+
+    .carousel-item img {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+
+    .home-button {
+      display: inline-block;
+      margin: 40px auto 20px;
+      background-color: #39D9A9;
+      color: black;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 20px;
+      font-weight: bold;
+    }
+
+    @media screen and (min-width: 769px) {
+      .carousel-container {
+        max-width: 1200px;
+        overflow: visible;
+      }
+
+      .carousel-track {
+        justify-content: center;
+      }
+
+      .carousel-item {
+        margin: 0 12px;
+        flex: 0 0 25%;
+        margin: 10px;
+        height: auto;
+      }
+    }
+
+    .description-box {
+      margin: 0 10px;
+      background: linear-gradient(135deg, #39D9A9, #00BFFF);
+      color: #000;
+      border-radius: 14px;
+      padding: 20px;
+      margin-top: 15px;
+      font-size: 1em;
+      font-weight: 500;
+      line-height: 1.4;
+      box-sizing: border-box;
+      scroll-snap-align: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .description-track {
+      gap: 20px;
+      padding: 10px 0;
+      display: flex;
+      scroll-snap-type: x mandatory;
+    }
+
+    @media screen and (min-width: 769px) {
+      .description-track {
+        gap: 20px;
+        padding: 10px 0;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: -30px;
+      }
+
+      .description-box {
+        flex: 0 0 25%;
+        max-width: 100%;
+        margin: 10px;
+        height: auto;
+      }
+    }
+
+    .grouped-track {
+      display: flex;
+      scroll-snap-type: x mandatory;
+    }
+
+    .feature-group {
+      flex: 0 0 80vw;
+      scroll-snap-align: center;
+      margin: 0 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .feature-group .carousel-item {
+      height: 250px;
+      border-bottom: 2px dashed #39D9A9;
+      position: relative;
+      flex: 0 0 auto;
+      background-color: #1a1a1a;
+      border-radius: 12px;
+      padding: 16px;
+      margin: 0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .feature-group .carousel-item:hover {
+      transform: translateY(-4px);
+    }
+
+    .feature-group .description-box {
+      width: 100%;
+      border-top: 3px solid #39D9A9;
+      position: relative;
+      background: linear-gradient(135deg, #39D9A9, #00BFFF);
+      color: #000;
+      border-radius: 12px;
+      padding: 16px;
+      margin-top: 12px;
+      font-size: 1em;
+      font-weight: 500;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      transition: box-shadow 0.3s ease;
+    }
+
+    .feature-group .description-box:hover {
+      box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+    }
+
+    @media screen and (min-width: 769px) {
+      .grouped-track {
+        flex-wrap: nowrap;
+        justify-content: center;
+      }
+
+      .feature-group {
+        flex: 0 0 25%;
+        margin: 10px;
+      }
+    }
+
+    /* Nascondi riquadri 1-4 da mobile */
+    @media screen and (max-width: 768px) {
+      .only-desktop {
+        display: none !important;
+      }
+    }
+</style>
+</head>
+<body>
+<h1>Scopri come funziona <span class="highlight">Zappy</span></h1>
+<p class="subtitle">Il sistema più smart e veloce per ordinare, pagare e semplificare tutto il lavoro nel tuo bar o locale.</p>
+<h2>Funzionalità principali</h2>
+<div class="carousel-container">
+  <div class="carousel-track grouped-track">
+    
+
+<div class="feature-group">
+  <div class="carousel-item feature-box" style="background-image: url('sfondo_ordine_qr_finale.webp'); background-size: cover; background-position: center; height: 250px;">
+  </div>
+  <div class="carousel-item description-box">
+    Ogni tavolo ha un QR univoco: il cliente lo scansiona e ordina in autonomia dal proprio telefono, senza contatto e senza attese. Più veloce per i clienti e per il locale: diventa moderno ed efficiente.
+  </div>
+</div>
+
+
+    
+<div class="feature-group">
+  <div class="carousel-item feature-box" style="background-image: url('sfondo_pagamento_integrato.webp'); background-size: cover; background-position: center; height: 250px;">
+  </div>
+  <div class="carousel-item description-box">
+    Dopo aver ordinato, il cliente paga direttamente dal telefono con carta, Apple Pay o Google Pay. Niente file, niente POS, tutto integrato in modo sicuro. Lo scontrino si stampa in tempo e lavora meglio.
+  </div>
+</div>
+
+    
+<div class="feature-group">
+  <div class="carousel-item feature-box" style="background-image: url('sfondo_comanda_automatica.webp'); background-size: cover; background-position: center; height: 250px;">
+  </div>
+  <div class="carousel-item description-box">
+    L’ordine arriva subito alla stampante del bar o cucina, senza bisogno di cameriere. Tutto è chiaro e tracciato, si stampa, si prepara, si serve. Più velocità, meno errori.
+  </div>
+</div>
+
+  </div>
+</div>
+<a class="home-button" href="index.html">← Torna alla Home</a>
+<h2>Perché scegliere Zappy</h2>
+<div class="carousel-container">
+
+  <div class="carousel-track description-track">
+    <div class="carousel-item description-box">
+      Ogni tavolo ha un QR univoco: il cliente lo scansiona e ordina in autonomia dal proprio telefono, senza contatto e senza attese. Più veloce per i clienti e per il locale: diventa moderno ed efficiente.
+    </div>
+    <div class="carousel-item description-box">
+      Dopo aver ordinato, il cliente paga direttamente dal telefono con carta, Apple Pay o Google Pay. Niente file, niente POS, tutto integrato in modo sicuro. Lo scontrino si stampa in tempo e lavora meglio.
+    </div>
+    <div class="carousel-item description-box">
+      L’ordine arriva subito alla stampante del bar o cucina, senza bisogno di cameriere. Tutto è chiaro e tracciato, si stampa, si prepara, si serve. Più velocità, meno errori.
+    </div>
+  </div>
+</div>
+
+<h2>Domande Frequenti (FAQ)</h2>
+<div style="max-width: 800px; margin: 2rem auto; text-align: left; padding: 0 1rem;">
+  <div style="margin-bottom: 1.5rem;">
+    <h3 style="color: #39D9A9;">💡 Serve una connessione internet per usare Zappy?</h3>
+    <p>Sì, è necessaria una connessione internet stabile nel locale per permettere ai clienti di accedere al menù e completare il pagamento online.</p>
+  </div>
+  <div style="margin-bottom: 1.5rem;">
+    <h3 style="color: #39D9A9;">📱 I clienti devono scaricare un'app?</h3>
+    <p>No! I clienti non devono scaricare nulla. Basta scansionare il QR code al tavolo per aprire direttamente il menù dal browser.</p>
+  </div>
+  <div style="margin-bottom: 1.5rem;">
+    <h3 style="color: #39D9A9;">💳 Come funziona il pagamento?</h3>
+    <p>I clienti possono pagare direttamente dal proprio smartphone con carta, Apple Pay o Google Pay. Il pagamento è sicuro e veloce.</p>
+  </div>
+  <div style="margin-bottom: 1.5rem;">
+    <h3 style="color: #39D9A9;">🖨️ Dove arrivano gli ordini?</h3>
+    <p>Ogni ordine viene stampato automaticamente nella stampante collegata al bar o alla cucina, pronta per essere preparato.</p>
+  </div>
+  <div style="margin-bottom: 1.5rem;">
+    <h3 style="color: #39D9A9;">🛠️ Serve assistenza per l’installazione?</h3>
+    <p>Noi forniamo lo Starter Kit completo e ti aiutiamo passo-passo a installarlo. In pochi minuti sei pronto a partire.</p>
+  </div>
+</div>
+
+</body>
+</html>

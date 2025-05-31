@@ -178,14 +178,6 @@
 
     <h2 style="margin-top: 4rem; font-size: 2rem;">Prezzo</h2>
     <p style="font-size: 1.2rem;"><strong>Kit iniziale:</strong> 200€ una tantum<br><strong>Abbonamento mensile:</strong> 69,90€ tutto incluso</p>
-    
-    
-<div style="margin-top: 2rem; display: flex; flex-direction: column; align-items: center;">
-  <img src="starterkit-zappy.png" alt="Zappy Starter Kit" 
-    style="width: 100%; max-width: 400px; border-radius: 16px; box-shadow: 0 0 20px rgba(0,0,0,0.3); margin-bottom: 1.5rem;">
-  
-</div>
-
 
     <a class="back-btn" href="index.html">← Torna alla Home</a>
   </section>
@@ -200,63 +192,6 @@
       boxes.forEach(box => {
         if (box !== el) box.classList.remove('active');
       });
-      el.classList.toggle('active');
-    }
-  </script>
-
-
-  <section class="section" style="background: #0e0e1c;">
-    <h2 style="font-size: 2rem; margin-bottom: 2rem;">Domande Frequenti (FAQ)</h2>
-
-    <div class="faq-item" onclick="toggleFaq(this)">
-      <h3>Dove posso posizionare i QR code nei tavoli?</h3>
-      <p class="faq-answer">Ti inviamo QR adesivi resistenti, da attaccare direttamente sul tavolo o su supporti verticali.</p>
-    </div>
-
-    <div class="faq-item" onclick="toggleFaq(this)">
-      <h3>Serve un’app per ordinare?</h3>
-      <p class="faq-answer">No, il cliente scansiona il QR e ordina dal browser, senza scaricare nulla.</p>
-    </div>
-
-    <div class="faq-item" onclick="toggleFaq(this)">
-      <h3>Come funziona l’assistenza?</h3>
-      <p class="faq-answer">Ti supportiamo via WhatsApp per qualsiasi esigenza o dubbio tecnico.</p>
-    </div>
-
-    <div class="faq-item" onclick="toggleFaq(this)">
-      <h3>Posso cambiare il menù in autonomia?</h3>
-      <p class="faq-answer">No, non è necessario farlo in autonomia: ti basta scrivere su WhatsApp e un operatore aggiornerà per te il menù, prodotti o prezzi inclusi nell’abbonamento.</p>
-    </div>
-  </section>
-
-  <style>
-    .faq-item {
-      background: #1a1a2e;
-      padding: 1.2rem;
-      margin-bottom: 1rem;
-      border-radius: 12px;
-      cursor: pointer;
-      text-align: left;
-      transition: all 0.3s ease;
-    }
-    .faq-item h3 {
-      margin: 0;
-      color: #39D9A9;
-    }
-    .faq-answer {
-      display: none;
-      margin-top: 0.5rem;
-      font-size: 0.95rem;
-      line-height: 1.5;
-      color: #eee;
-    }
-    .faq-item.active .faq-answer {
-      display: block;
-    }
-  </style>
-
-  <script>
-    function toggleFaq(el) {
       el.classList.toggle('active');
     }
   </script>

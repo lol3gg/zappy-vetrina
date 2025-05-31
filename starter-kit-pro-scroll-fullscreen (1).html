@@ -1,0 +1,261 @@
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Starter Kit Pro - Zappy</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Segoe+UI:400,700&display=swap">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #0c0c15;
+      color: white;
+      scroll-behavior: smooth;
+    }
+    nav {
+      background: #0c0c15;
+      display: flex;
+      justify-content: space-between;
+      padding: 0.5rem 2rem;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 1.5rem;
+    }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+    }
+    .cta {
+      background: linear-gradient(90deg, #39D9A9, #00C2FF);
+      color: white;
+      padding: 0.7rem 1.5rem;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .hero {
+      background: linear-gradient(160deg, #10101A 60%, #141421);
+      padding: 6rem 2rem 3rem;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 800px;
+      margin: auto;
+      line-height: 1.6;
+    }
+    .section {
+      padding: 4rem 2rem;
+      max-width: 1200px;
+      margin: auto;
+      text-align: center;
+    }
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    .feature-box {
+      background: #1a1a2e;
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: 0 0 12px rgba(0,0,0,0.3);
+    }
+    .feature-box h3 {
+      color: #39D9A9;
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+    }
+    .back-btn {
+      margin-top: 3rem;
+      display: inline-block;
+      text-decoration: none;
+      color: white;
+      background: linear-gradient(90deg, #39D9A9, #00C2FF);
+      padding: 0.8rem 1.6rem;
+      border-radius: 30px;
+      font-weight: bold;
+    }
+    footer {
+      background: #0c0c15;
+      padding: 2rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #999;
+    }
+  
+    
+    @media screen and (max-width: 768px) {
+      .scroll-horizontal {
+        display: flex !important;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        gap: 0;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory;
+      }
+      .scroll-horizontal .feature-box {
+        min-width: 100vw;
+        max-width: 100vw;
+        flex-shrink: 0;
+        scroll-snap-align: center;
+        padding: 2rem 1.5rem;
+        border: 2px solid #39D9A9;
+        box-sizing: border-box;
+      }
+    }
+
+      .scroll-horizontal .feature-box {
+        min-width: 260px;
+        flex-shrink: 0;
+      }
+    }
+
+
+    
+    @media screen and (max-width: 768px) {
+      .scroll-horizontal {
+        display: flex !important;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        gap: 0;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory;
+      }
+      .scroll-horizontal .feature-box {
+        min-width: 100vw;
+        max-width: 100vw;
+        flex-shrink: 0;
+        scroll-snap-align: center;
+        padding: 2rem 1.5rem;
+        border: 2px solid #39D9A9;
+        box-sizing: border-box;
+      }
+    }
+
+      .scroll-horizontal .feature-box {
+        min-width: 80%;
+        flex-shrink: 0;
+        scroll-snap-align: center;
+        border: 2px solid #39D9A9;
+        box-sizing: border-box;
+      }
+    }
+
+</style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">Zappy</div>
+    <ul>
+      <li><a href="index.html#funzionalita">Funzionalità</a></li>
+      <li><a href="index.html#prezzi">Prezzi</a></li>
+      <li><a href="index.html#contatti">Contatti</a></li>
+    </ul>
+    <a class="cta" href="https://wa.me/393791243514" target="_blank">Inizia ora</a>
+  </nav>
+
+  <section class="hero">
+    <h1>Starter Kit Pro</h1>
+    <p>La soluzione definitiva per bar all’avanguardia che vogliono velocità, controllo e stile.</p>
+  </section>
+
+  <section class="section">
+    <h2 style="font-size: 2rem;">Cosa include</h2>
+    <div class="feature-grid">
+      <div class="feature-box">
+        <h3>Tutto lo Starter Kit base</h3>
+        <p>Stampante, QR, installazione, assistenza continua.</p>
+      </div>
+      <div class="feature-box">
+        <h3>POS Zappy incluso</h3>
+        <p>Ricevi pagamenti contactless e digitali direttamente dal cliente.</p>
+      </div>
+      <div class="feature-box">
+        <h3>Tablet con app Zappy</h3>
+        <p>Visualizza in tempo reale tutti gli ordini da ogni tavolo con uno stile moderno.</p>
+      </div>
+      <div class="feature-box">
+        <h3>Gestione avanzata</h3>
+        <p>Notifiche, comande dettagliate, preferiti, tavoli attivi e statistiche integrate.</p>
+      </div>
+    </div>
+
+    <h2 style="margin-top: 4rem; font-size: 2rem;">Prezzo</h2>
+    <p style="font-size: 1.2rem;"><strong>Kit Pro:</strong> 699€ una tantum<br><strong>Abbonamento mensile:</strong> 69,99€ tutto incluso</p>
+
+    <a class="back-btn" href="index.html">← Torna alla Home</a>
+  </section>
+
+  <footer>
+    &copy; 2025 Zappy. Tutti i diritti riservati.
+  
+  <section class="section" style="background: #0e0e1c;">
+    <h2 style="font-size: 2rem;">La rivoluzione nei bar</h2>
+    <p style="font-size: 1.1rem; max-width: 800px; margin: auto;">
+      Il Kit Pro è la versione più evoluta di Zappy: combina hardware professionale e software avanzato per trasformare completamente il modo in cui prendi ordini e gestisci il locale.<br><br>
+      Con il POS Zappy, puoi accettare pagamenti in modo rapido e sicuro. Il tablet dedicato, incluso nel kit, mostra in tempo reale tutti gli ordini provenienti dai tavoli con notifiche istantanee, organizzazione smart e interfaccia ottimizzata per i baristi. 
+      <br><br>Molti bar risparmiano tempo e personale: con Zappy, potenzialmente puoi anche ridurre il numero di camerieri richiesti in sala grazie a un sistema che gestisce in autonomia ordini, extra e pagamenti.
+    </p>
+  </section>
+
+  <section class="section">
+    <h2 style="font-size: 2rem;">Cosa puoi fare con l’app Zappy per tablet</h2>
+    <div class="feature-grid scroll-horizontal">
+      <div class="feature-box">
+        <h3>Visualizzazione in tempo reale</h3>
+        <p>Ogni nuovo ordine appare subito con indicazione del tavolo, prodotti scelti e varianti.</p>
+      </div>
+      <div class="feature-box">
+        <h3>Notifiche e suoni intelligenti</h3>
+        <p>Ogni comanda è segnalata da suoni e vibrazioni: nessun ordine passa inosservato.</p>
+      </div>
+      <div class="feature-box">
+        <h3>Stile scuro perfetto per il bancone</h3>
+        <p>Design leggibile anche in ambienti notturni e sotto luci forti.</p>
+      </div>
+      <div class="feature-box">
+        <h3>Controllo e velocità</h3>
+        <p>Riduci i tempi di attesa, aumenta la produttività e tieni tutto sotto controllo da un unico pannello.</p>
+      </div>
+    </div>
+  </section>
+
+  
+
+
+  <section class="section" style="background: #0e0e1c;">
+    <h2 style="font-size: 2rem;">Domande Frequenti (FAQ)</h2>
+    <div style="max-width: 800px; margin: auto; text-align: left;">
+      <h3 style="color: #39D9A9;">Serve un tecnico per installare Zappy Pro?</h3>
+      <p>No, il kit arriva già configurato. Ti basta collegare stampante e tablet: tutto è plug & play.</p>
+
+      <h3 style="color: #39D9A9;">L’app è difficile da usare?</h3>
+      <p>No. È progettata per essere usata da chiunque. In pochi minuti sei operativo senza alcuna formazione.</p>
+
+      <h3 style="color: #39D9A9;">Posso modificare il mio menù in autonomia?</h3>
+      <p>Non serve farlo da soli: basta scrivere su WhatsApp e un nostro operatore aggiornerà per te tutto.</p>
+
+      <h3 style="color: #39D9A9;">È compatibile con qualsiasi tipo di bar?</h3>
+      <p>Sì. Funziona perfettamente in bar, pub, locali notturni, stabilimenti balneari e chioschi.</p>
+    </div>
+  </section>
+
+</footer>
+
+</body>
+</html>

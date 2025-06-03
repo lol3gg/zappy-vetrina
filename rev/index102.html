@@ -1,8 +1,8 @@
 <html lang="it"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Zappy - Soluzione per Ordinare e Pagare</title>
-<style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zappy - Soluzione per Ordinare e Pagare</title>
+  <style>
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
@@ -49,7 +49,7 @@
     }
 
     .hero h1 {
-      font-size: 3.5rem;
+      font-size: 3rem;
       margin-bottom: 1rem;
     }
 
@@ -78,7 +78,7 @@
 
     .section h2 {
       text-align: center;
-      font-size: 2.5rem;
+      font-size: 2.2rem;
       margin-bottom: 2rem;
     }
 
@@ -108,7 +108,7 @@
       padding: 2rem;
       color: #000;
       font-weight: bold;
-      font-size: 1.9rem;
+      font-size: 1.3rem;
       margin-top: 2rem;
       border-radius: 10px;
     }
@@ -254,17 +254,17 @@
   }
 
   .hero h1 {
-    font-size: 1.9rem;
+    font-size: 1.7rem;
     margin-bottom: 0.5rem;
   }
 
   .hero p {
-    font-size: 1.2rem;
+    font-size: 1rem;
     margin-bottom: 0;
   }
 
   .section h2 {
-    font-size: 1.9rem;
+    font-size: 1.5rem;
     margin-bottom: 1rem;
   }
 
@@ -274,7 +274,7 @@
 
   .app-box {
     height: 50px;
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 
   .app-box img {
@@ -353,7 +353,7 @@
 .zappy-card h3 {
   margin-top: 0;
   margin-bottom: 1rem;
-  font-size: 1.9rem;
+  font-size: 1.3rem;
 }
 
 .zappy-card img {
@@ -373,165 +373,152 @@
   opacity: 0.95;
 }
 </style>
-<style id="operaUserStyle" type="text/css"></style>
-<style>
-@media (max-width: 768px) {
-  .grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-  .card {
-    height: auto;
-    min-height: 180px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-}
-</style>
-</head>
+<style type="text/css" id="operaUserStyle"></style></head>
 <body>
-<div class="popup">
+
+  <div class="popup">
     🎁 Guarda ora la DEMO gratuita →
     <a href="https://zappy-24d29.web.app" target="_blank">Vai al sito</a>
-</div>
-<div class="popup-spacer"></div>
-<nav>
-<div class="logo mobile-hide-on-small">Zappy</div>
-<ul>
-<li><a href="#funzionalita">Funzionalità</a></li>
-<li><a href="#prezzi">Prezzi</a></li>
-<li><a href="#contatti">Contatti</a></li>
-</ul>
-<a class="cta mobile-hide-on-small" href="https://wa.me/393791243514" target="_blank">Inizia ora</a>
-</nav>
-<div class="mobile-only" style="text-align: center; margin: 1rem 0;">
-<a class="cta" href="https://wa.me/393791243514" target="_blank">Inizia ora</a>
-</div>
-<section class="hero">
-<h1>Il modo più <span class="gradient-text"><em>VELOCE</em></span> per servire i tuoi clienti.</h1>
-<p>Ordina e paga con un tap. Niente code, niente app da scaricare.</p> </section>
+  </div>
+  <div class="popup-spacer"></div>
+
+  <nav>
+    <div class="logo mobile-hide-on-small">Zappy</div>
+    <ul>
+      <li><a href="#funzionalita">Funzionalità</a></li>
+      <li><a href="#prezzi">Prezzi</a></li>
+      <li><a href="#contatti">Contatti</a></li>
+    </ul>
+    <a class="cta mobile-hide-on-small" href="https://wa.me/393791243514" target="_blank">Inizia ora</a>
+  </nav>
+  <div class="mobile-only" style="text-align: center; margin: 1rem 0;">
+    <a class="cta" href="https://wa.me/393791243514" target="_blank">Inizia ora</a>
+  </div>
+
+
+  <section class="hero">
+    <h1>Il modo più <span class="gradient-text"><em>VELOCE</em></span> per servire i tuoi clienti.</h1>
+    <p>Ordina e paga con un tap. Niente code, niente app da scaricare.</p>  </section>
+
+  
 <section class="section" style="text-align:center;">
-<h2 class="static-gradient-text">L'unico sistema con app integrate (opzionali)</h2>
+  <h2 class="static-gradient-text">L'unico sistema con app integrate (opzionali)</h2>
+  
+
+
+
 <div class="app-grid">
-<div class="app-box-container">
-<div class="app-box chrome-style">
-<img alt="Zappy Love" src="immagini/qr_cuore.png"/>
-<span>Zappy</span>
-<span class="arrow" onclick="togglePopup(1)">▼</span>
+  <div class="app-box-container">
+    <div class="app-box chrome-style">
+      <img src="immagini/qr_cuore.png" alt="Zappy Love">
+      <span>Zappy</span>
+      <span class="arrow" onclick="togglePopup(1)">▼</span>
+    </div>
+    <div class="popup-box" id="popup-1">
+      <div class="popup-content">
+        <span class="close" onclick="togglePopup(1)">✕</span>
+        <p>Descrizione dell'app Zappy Love...</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="app-box-container">
+    <div class="app-box chrome-style">
+      <img src="immagini/qr_bambino.png" alt="Zappy Baby">
+      <span>Zappy</span>
+      <span class="arrow" onclick="togglePopup(2)">▼</span>
+    </div>
+    <div class="popup-box" id="popup-2">
+      <div class="popup-content">
+        <span class="close" onclick="togglePopup(2)">✕</span>
+        <p>Descrizione dell'app Zappy Baby...</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="app-box-container">
+    <div class="app-box chrome-style">
+      <img src="immagini/qr_game.png" alt="Zappy Game">
+      <span>Zappy</span>
+      <span class="arrow" onclick="togglePopup(3)">▼</span>
+    </div>
+    <div class="popup-box" id="popup-3">
+      <div class="popup-content">
+        <span class="close" onclick="togglePopup(3)">✕</span>
+        <p>Descrizione dell'app Zappy Game...</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="app-box-container">
+    <div class="app-box chrome-style">
+      <img src="immagini/qr_wifi.png" alt="Zappy WiFi">
+      <span>Zappy</span>
+      <span class="arrow" onclick="togglePopup(4)">▼</span>
+    </div>
+    <div class="popup-box" id="popup-4">
+      <div class="popup-content">
+        <span class="close" onclick="togglePopup(4)">✕</span>
+        <p>Descrizione dell'app Zappy WiFi...</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="app-box-container">
+    <div class="app-box chrome-style">
+      <img src="immagini/qr_rainbow.png" alt="Zappy Rainbow">
+      <span>Zappy</span>
+      <span class="arrow" onclick="togglePopup(5)">▼</span>
+    </div>
+    <div class="popup-box" id="popup-5">
+      <div class="popup-content">
+        <span class="close" onclick="togglePopup(5)">✕</span>
+        <p>Descrizione dell'app Zappy Rainbow...</p>
+      </div>
+    </div>
+  </div>
 </div>
-<div class="popup-box" id="popup-1">
-<div class="popup-content">
-<span class="close" onclick="togglePopup(1)">✕</span>
-<p>Con <strong>Zappy Match</strong> i clienti possono chattare tra tavoli, scoprire nuove persone e socializzare direttamente dal proprio posto. Ideale per eventi e serate dinamiche.</p>
-</div>
-</div>
-</div>
-<div class="app-box-container">
-<div class="app-box chrome-style">
-<img alt="Zappy Baby" src="immagini/qr_bambino.png"/>
-<span>Zappy</span>
-<span class="arrow" onclick="togglePopup(2)">▼</span>
-</div>
-<div class="popup-box" id="popup-2">
-<div class="popup-content">
-<span class="close" onclick="togglePopup(2)">✕</span>
-<p><strong>Zappy Land</strong> è l'app pensata per intrattenere bambini e ragazzi nel locale, con giochi, disegni e animazioni divertenti per tutte le età.</p>
-</div>
-</div>
-</div>
-<div class="app-box-container">
-<div class="app-box chrome-style">
-<img alt="Zappy Game" src="immagini/qr_game.png"/>
-<span>Zappy</span>
-<span class="arrow" onclick="togglePopup(3)">▼</span>
-</div>
-<div class="popup-box" id="popup-3">
-<div class="popup-content">
-<span class="close" onclick="togglePopup(3)">✕</span>
-<p><strong>Zappy Photo</strong> permette a ogni cliente di pubblicare una foto scattata nel locale. Crea una gallery condivisa e stimola la partecipazione, ideale anche per promozioni social!</p>
-</div>
-</div>
-</div>
-<div class="app-box-container">
-<div class="app-box chrome-style">
-<img alt="Zappy WiFi" src="immagini/qr_wifi.png"/>
-<span>Zappy</span>
-<span class="arrow" onclick="togglePopup(4)">▼</span>
-</div>
-<div class="popup-box" id="popup-4">
-<div class="popup-content">
-<span class="close" onclick="togglePopup(4)">✕</span>
-<p><strong>Zappy Room</strong> è l'app perfetta per sfidarsi a quiz, da soli o in gruppo! Diverse categorie e partite a tempo rendono l'esperienza coinvolgente e competitiva.</p>
-</div>
-</div>
-</div>
-<div class="app-box-container">
-<div class="app-box chrome-style">
-<img alt="Zappy Rainbow" src="immagini/qr_rainbow.png"/>
-<span>Zappy</span>
-<span class="arrow" onclick="togglePopup(5)">▼</span>
-</div>
-<div class="popup-box" id="popup-5">
-<div class="popup-content">
-<span class="close" onclick="togglePopup(5)">✕</span>
-<p><strong>Zappy Lucky</strong> attiva una ruota della fortuna ad ogni pagamento: i clienti possono vincere coupon sconto da usare sul prossimo ordine, previo accordo con il barista.</p>
-</div>
-</div>
-</div>
-</div>
+
 </section>
-<section class="section" id="funzionalita">
-<h2>Scopri i nostri kit</h2>
-<div class="grid">
-<div class="card">
-<a class="feature-box" href="come-funziona.html"><h3>Come funziona per il cliente</h3>
-</a><p><a class="feature-box" href="come-funziona.html">Scopri come Zappy semplifica il servizio: QR, comande e pagamenti in un flusso continuo.</a></p>
-</div>
-<div class="card">
-<a class="feature-box" href="starter-kit.html"><h3>Starter kit e prezzi</h3>
-</a><p><a class="feature-box" href="starter-kit.html">Tutto quello che ti serve per partire: hardware, abbonamenti, installazione e supporto.</a></p>
-</div>
-<div class="card">
-<h3>Starter kit PRO e prezzi</h3>
-<p>Scopri il kit completo con stampante, tablet, POS Zappy e assistenza premium: tutto incluso a un prezzo trasparente.</p>
-</div>
-</div>
-</section>
-<section class="section" style="background:#0e0e1c; text-align: center;">
-<h2 class="static-gradient-text">Perché scegliere Zappy</h2>
-<div class="grid">
-<div class="card">
-<h3>💳 Aumento dello scontrino medio</h3>
-<p>Ogni cliente può ordinare di più in autonomia, con suggerimenti intelligenti.</p>
-</div>
-<div class="card">
-<h3>⚡️ Riduzione dei tempi di attesa</h3>
-<p>Gli ordini arrivano direttamente in cassa o alla stampante, subito pronti.</p>
-</div>
-<div class="card">
-<h3>🧍‍♂️ Più libertà per il personale</h3>
-<p>Il team è più libero di seguire i clienti senza stress e corse inutili.</p>
-</div>
-<div class="card">
-<h3>🎯 Nessun errore nelle comande</h3>
-<p>Ordini chiari e precisi, senza più fraintendimenti o errori di scrittura.</p>
-</div>
-</div>
-<h2 class="static-gradient-text" style="margin-top: 4rem;">A chi è rivolto?</h2>
-<p style="font-size: 1rem; max-width: 700px; margin: auto;">
-        Perfetto per: Bar, Pub, Pizzerie, Chioschi, Stabilimenti Balneari, Street Food, Eventi, Sagre, Feste private e molto altro.
-      </p>
-</section>
-<section class="section" id="contatti" style="text-align:center;">
-<h2>Contattaci</h2>
-<p>Vuoi portare Zappy nel tuo locale? Scrivici su WhatsApp.</p>
-<a class="cta" href="https://wa.me/393791243514">Contattaci ora</a>
-</section>
+
+
+  <section id="funzionalita" class="section">
+    <h2>Funzionalità di Zappy</h2>
+    <div class="grid">
+      <div class="card">
+        <a href="come-funziona.html" class="feature-box"><h3>Come funziona</h3>
+        </a><p><a href="come-funziona.html" class="feature-box">Scopri come Zappy semplifica il servizio: QR, comande e pagamenti in un flusso continuo.</a></p>
+      </div>
+      <div class="card">
+        <a href="starter-kit.html" class="feature-box"><h3>Starter kit e prezzi</h3>
+        </a><p><a href="starter-kit.html" class="feature-box">Tutto quello che ti serve per partire: hardware, abbonamenti, installazione e supporto.</a></p>
+      </div>
+      <div class="card">
+        <h3>Comanda automatica</h3>
+        <p>La stampante riceve l’ordine in tempo reale, senza attese.</p>
+      </div>
+      
+    </div>
+  </section>
+
+  
+
+  
+
+  <section id="contatti" class="section" style="text-align:center;">
+    <h2>Contattaci</h2>
+    <p>Vuoi portare Zappy nel tuo locale? Scrivici su WhatsApp.</p>
+    <a href="https://wa.me/393791243514" class="cta">Contattaci ora</a>
+  </section>
+
+  
+
+
 <footer>
     © 2025 Zappy. Tutti i diritti riservati.
   </footer>
+
+
 <style>
   .arrow {
     cursor: pointer;
@@ -614,6 +601,8 @@
   opacity: 0.95;
 }
 </style>
+
+
 <script>
   function togglePopup(id) {
     // Chiudi tutti i popup
@@ -633,6 +622,9 @@
     }
   }
 </script>
+
+
+
 <style>
   .arrow {
     cursor: pointer;
@@ -752,14 +744,7 @@
 }
 
 
-
-@media (max-width: 768px) {
-  .card {
-    height: auto;
-    min-height: 140px;
-    padding: 1rem 1rem;
-    font-size: 0.9rem;
-  }
-}
 </style>
+
+
 </body></html>

@@ -393,18 +393,6 @@
   height: 35px;
 }
 
-
-@media (max-width: 768px) {
-  .grid {
-    display: flex !important;
-    flex-direction: column;
-    align-items: center;
-  }
-  .card {
-    margin: 0 auto;
-    width: 90%;
-  }
-}
 </style>
 <style id="operaUserStyle" type="text/css"></style>
 <style>
@@ -432,6 +420,11 @@
 <div class="popup-spacer"></div>
 <nav>
 <div class="logo mobile-hide-on-small">Zappy</div>
+<ul>
+<li><a href="#funzionalita">Funzionalità</a></li>
+<li><a href="#prezzi">Prezzi</a></li>
+<li><a href="#contatti">Contatti</a></li>
+</ul>
 <a class="cta mobile-hide-on-small" href="https://wa.me/393791243514" target="_blank">Inizia ora</a>
 </nav>
 <div class="mobile-only" style="text-align: center; margin: 1rem 0;">
@@ -511,7 +504,7 @@
 </div>
 </section>
 <section class="section" id="funzionalita">
-<h2>Scopri i nostri kit</h2><p style="margin-top: -1rem; margin-bottom: 2rem; font-style: italic; font-size: 1rem; color: #ccc; text-align: center;">(Clicca sui riquadri per scoprire di più)</p>
+<h2>Scopri i nostri kit</h2>
 <div class="grid">
 <div class="card">
 <a class="feature-box" href="come-funziona.html"><h3>Come funziona per il cliente</h3>
@@ -522,10 +515,10 @@
 </a><p><a class="feature-box" href="starter-kit.html">Tutto quello che ti serve per partire: hardware, abbonamenti, installazione e supporto.</a></p>
 </div>
 <div class="card">
-<a class="feature-box" href="starter-kit-pro.html">
-<h3>Starter kit PRO e prezzi</h3>
-<p>Scopri il kit completo con stampante, tablet, POS Zappy e assistenza premium: tutto incluso a un prezzo trasparente.</p>
-</a>
+  <a class="feature-box" href="starter-kit-pro.html">
+    <h3>Starter kit PRO e prezzi</h3>
+    <p>Scopri il kit completo con stampante, tablet, POS Zappy e assistenza premium: tutto incluso a un prezzo trasparente.</p>
+  </a>
 </div>
 </div>
 </section>
@@ -792,7 +785,9 @@
   }
 }
 </style>
-<a href="https://wa.me/393791243514" id="whatsapp-button" target="_blank">
-<img alt="Chatta su WhatsApp" src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"/>
+
+<a href="https://wa.me/393791243514" target="_blank" id="whatsapp-button">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Chatta su WhatsApp" />
 </a>
+
 </body></html>

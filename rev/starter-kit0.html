@@ -70,7 +70,7 @@
 
     .feature-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* default */
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 2rem;
       margin-top: 3rem;
     }
@@ -133,14 +133,7 @@
       font-size: 0.9rem;
       color: #999;
     }
-  
-@media screen and (min-width: 1024px) {
-  .feature-grid {
-    grid-template-columns: repeat(5, 1fr) !important;
-  }
-}
-
-</style>
+  </style>
 </head>
 <body>
 <nav>
@@ -165,13 +158,6 @@
 <p>Uno per ogni tavolo, con numero e logo.</p>
 <div class="popup-description">Ricevi i QR adesivi già pronti da attaccare ai tavoli. Ordine diretto senza app.</div>
 </div>
-
-<div class="feature-box" onclick="toggleBox(this)">
-<h3>POS Zappy incluso</h3>
-<p>Accetta pagamenti direttamente dai clienti.</p>
-<div class="popup-description">Ricevi anche il POS: consente pagamenti digitali, contactless e gestione semplice degli incassi.</div>
-</div>
-
 <div class="feature-box" onclick="toggleBox(this)">
 <h3>Configurazione, Raspberry &amp; installazione</h3>
 <p>Fatto da noi, tutto pronto all'uso.</p>
@@ -184,7 +170,7 @@
 </div>
 </div>
 <h2 style="margin-top: 4rem; font-size: 2rem;">Prezzo</h2>
-<p style="font-size: 1.2rem;"><strong>Starter Pack:</strong> 549€ una tantum<br/><strong>Abbonamento mensile:</strong> 49,90€ tutto incluso<br/><strong>Commissione POS:</strong> 0,99% su ogni pagamento</p>
+<p style="font-size: 1.2rem;"><strong>Starter Pack:</strong> 349€ una tantum<br/><strong>Abbonamento mensile:</strong> 49,90€ tutto incluso</p>
 <div style="margin-top: 2rem; display: flex; flex-direction: column; align-items: center;">
 <img alt="Zappy Starter Kit" src="starterkit-zappy.png" style="width: 100%; max-width: 400px; border-radius: 16px; box-shadow: 0 0 20px rgba(0,0,0,0.3); margin-bottom: 1.5rem;"/>
 </div>
@@ -243,14 +229,7 @@
     .faq-item.active .faq-answer {
       display: block;
     }
-  
-@media screen and (min-width: 1024px) {
-  .feature-grid {
-    grid-template-columns: repeat(5, 1fr) !important;
-  }
-}
-
-</style>
+  </style>
 <script>
     function toggleFaq(el) {
       el.classList.toggle('active');

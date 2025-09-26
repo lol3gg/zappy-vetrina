@@ -56,7 +56,7 @@
     .zappy-card img{width:100%;max-height:160px;object-fit:contain;margin-top:auto}
     .feature-box{display:block;color:inherit;text-decoration:none}
     .feature-box:hover{opacity:.95}
-    #whatsapp-button{position:fixed;bottom:20px;right:20px;z-index:999;width:60px;height:60px;border-radius:50%;box-shadow:0 4px 12px rgba(0,0,0,.3);background-color:#25D366;display:flex;align-items:center;justify-content:center}
+    #whatsapp-button{position:fixed;bottom:20px;left: 20px;z-index:999;width:60px;height:60px;border-radius:50%;box-shadow:0 4px 12px rgba(0,0,0,.3);background-color:#25D366;display:flex;align-items:center;justify-content:center}
     #whatsapp-button img{width:35px;height:35px}
     @media (max-width:768px){.grid{display:flex!important;flex-direction:column;align-items:center}.card{margin:0 auto;width:90%}}
     @media (max-width:768px){.app-box{width:100vw!important;max-width:none!important;border-radius:0!important;height:60px!important}}
@@ -159,10 +159,131 @@
 .demo-cta .arrow{transition:transform .2s ease}
 .demo-cta:hover .arrow{transform:translateX(3px)}
 
+
+.app-header { justify-content: space-between; }
+.app-header .label { flex: 1; text-align: center; }
+
+
+.card .cta-link {
+  display:inline-block;
+  margin-top:1rem;
+  padding:0.5rem 1rem;
+  border-radius:20px;
+  background:rgba(0,0,0,0.75);
+  color:#fff;
+  font-weight:600;
+  text-decoration:none;
+  transition:background .2s ease, transform .2s ease;
+}
+.card .cta-link:hover {
+  background:linear-gradient(90deg,#39D9A9,#00C2FF);
+  transform:translateY(-2px);
+}
+
+
+.cta-fixed {
+  position:fixed;
+  top:70px;
+  left:20px;
+  z-index:9999;
+  background:linear-gradient(90deg,#39D9A9,#00C2FF,#6A00FF);
+  color:#fff!important;
+  padding:0.7rem 1.5rem;
+  border-radius:25px;
+  text-decoration:none;
+  font-weight:bold;
+  box-shadow:0 4px 12px rgba(0,0,0,0.3);
+  transition:all .2s ease;
+}
+.cta-fixed:hover {
+  filter:brightness(1.1);
+  transform:translateY(-2px);
+}
+
+
+.whatsapp-float {
+  position:fixed;
+  width:60px;
+  height:60px;
+  bottom:20px;
+  left: 20px;
+  background:#25D366;
+  color:#fff;
+  border-radius:50%;
+  text-align:center;
+  font-size:30px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.3);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:1000;
+  transition:transform .2s ease;
+}
+.whatsapp-float:hover {
+  transform:scale(1.1);
+}
+
+
+.cards-container {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.cards-container .card {
+  flex: 1 1 300px;
+  max-width: 400px;
+}
+
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+
+footer {
+  background:#111;
+  color:#fff;
+  text-align:center;
+  padding:1rem;
+}
+
+
+.super-banner { margin: 4rem auto 2.5rem; /* aggiunge spazio sopra e sotto per centrarlo */
+}
+
+
+#perche {
+  padding-top: 1.5rem !important;
+}
+
+
+.popup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  position: relative;
+}
+.popup-logo {
+  position: absolute;
+  left: 20px;
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #111;
+}
+
 </style>
 </head>
 <body>
 <div class="popup">
+    <span class="popup-logo">Zappy</span>
   🎁 Guarda ora la DEMO gratuita →
   <a href="https://zappy-24d29.web.app" target="_blank">Vai al sito</a>
 </div>
@@ -170,7 +291,9 @@
 
 <nav>
   <div class="logo mobile-hide-on-small" style="display:none;"></div>
-  <a class="cta mobile-hide-on-small" href="https://wa.me/393791243514" target="_blank">Inizia ora</a>
+  
+<a class="cta-fixed" href="https://wa.me/393791243514" target="_blank">Inizia ora</a>
+
 </nav>
 
 <section class="hero">
@@ -187,7 +310,7 @@
     <!-- BTN 1: Zappy Match -->
     <div class="app-box chrome-style" data-app="match">
       <div class="app-header">
-        <img src="immagini/qr_cuore.png" alt="Zappy Match"/>
+        
         <span class="label">Zappy Match</span>
         <span class="arrow">▼</span>
       </div>
@@ -198,7 +321,7 @@
     <!-- BTN 2: Zappy Land -->
     <div class="app-box chrome-style" data-app="land">
       <div class="app-header">
-        <img src="immagini/qr_bambino.png" alt="Zappy Land"/>
+        
         <span class="label">Zappy Land</span>
         <span class="arrow">▼</span>
       </div>
@@ -209,7 +332,7 @@
     <!-- BTN 3: Zappy Photo -->
     <div class="app-box chrome-style" data-app="photo">
       <div class="app-header">
-        <img src="immagini/qr_game.png" alt="Zappy Photo"/>
+        
         <span class="label">Zappy Photo</span>
         <span class="arrow">▼</span>
       </div>
@@ -220,7 +343,7 @@
     <!-- BTN 4: Zappy Room -->
     <div class="app-box chrome-style" data-app="room">
       <div class="app-header">
-        <img src="immagini/qr_wifi.png" alt="Zappy Room"/>
+        
         <span class="label">Zappy Room</span>
         <span class="arrow">▼</span>
       </div>
@@ -231,7 +354,7 @@
     <!-- BTN 5: Zappy Lucky -->
     <div class="app-box chrome-style" data-app="lucky">
       <div class="app-header">
-        <img src="immagini/qr_rainbow.png" alt="Zappy Lucky"/>
+        
         <span class="label">Zappy Lucky</span>
         <span class="arrow">▼</span>
       </div>
@@ -240,33 +363,42 @@
       </div>
     </div>
   </div>
+<div class="app-description" style="max-width:900px;margin:2.5rem auto 0 auto;text-align:center;line-height:1.7;">
+  <h2 class="gradient-text" style="font-size:2rem;margin-bottom:1rem;">🔥 Le app che cambiano le regole del gioco.</h2>
+  <p style="font-size:1.1rem;">Non parliamo di funzioni qualsiasi: sono esperienze uniche, progettate per rendere il tuo locale indimenticabile.<br/>
+  Con Zappy i clienti non vengono solo a bere o mangiare: <strong>rimangono, socializzano, giocano, condividono e parlano del tuo locale anche il giorno dopo.</strong></p>
+
+  <h3 class="gradient-text" style="font-size:1.6rem;margin:2rem 0 1rem 0;">💎 Un’esclusiva che solo Zappy offre.</h3>
+  <p style="font-size:1.1rem;">Nessun altro in Italia ha un ecosistema integrato così potente.<br/>
+  Ogni app è un magnete che aumenta il tempo di permanenza, lo scontrino medio e il passaparola spontaneo.</p>
+
+  <h3 class="gradient-text" style="font-size:1.6rem;margin:2rem 0 1rem 0;">📌 Il controllo è tuo.</h3>
+  <p style="font-size:1.1rem;">Puoi attivarne una, due, tre… o tutte.<br/>
+  <strong>Zappy si adatta al tuo stile e ai tuoi clienti, trasformando ogni serata in qualcosa che non possono trovare da nessun’altra parte.</strong></p>
+</div>
+
 </section>
 
 <section class="section" id="funzionalita">
-  <h2>Clicca sulle card per scoprire i nostri kit 🔎</h2>
+  <h2>Scopri il nostro kit e come funziona 🔎</h2>
   
   <div class="grid">
-    <div class="card">
-      <a class="feature-box" href="come-funziona.html">
-        <h3>Come funziona per il cliente</h3>
-        <p>Scopri come Zappy semplifica il servizio: QR, comande e pagamenti in un flusso continuo.</p>
-        <span class="hover-cta">Scopri di più →</span>
-      </a>
-    </div>
-    <div class="card">
-      <a class="feature-box" href="starter-kit.html">
-        <h3>Starter kit e prezzi</h3>
-        <p>Tutto quello che ti serve per partire: hardware, abbonamenti, installazione e supporto.</p>
-        <span class="hover-cta">Scopri di più →</span>
-      </a>
-    </div>
-    <div class="card">
+    
+    <div class="cards-container">
+<div class="card">
+  <h3>Come funziona per il cliente</h3>
+  <p>Scopri come Zappy semplifica il servizio: QR, comande e pagamenti in un flusso continuo.</p>
+  <a href="come-funziona.html" class="cta-link">Clicca qui per scoprire di più →</a>
+</div>
+
+<div class="card">
       <a class="feature-box" href="starter-kit-pro.html">
         <h3>Starter kit PRO e prezzi</h3>
         <p>Scopri il kit completo con stampante, tablet, POS Zappy e assistenza premium: tutto incluso a un prezzo trasparente.</p>
-        <span class="hover-cta">Scopri di più →</span>
+        <a href="starter-kit-pro.html" class="cta-link">Clicca qui per scoprire di più →</a>
       </a>
     </div>
+</div>
 </div>
 </section>
 
@@ -289,7 +421,7 @@
   </div>
 </section>
 
-<section class="section" style="background:#111111;text-align:center;">
+<section id="perche" class="section" style="background:#111111;text-align:center;">
   <h2 class="static-gradient-text">Perché scegliere Zappy</h2>
   <div class="grid">
     <div class="card"><h3>💳 Aumento dello scontrino medio</h3><p>Ogni cliente può ordinare di più in autonomia, con suggerimenti intelligenti.</p></div>
@@ -321,7 +453,7 @@
 <footer>© 2025 Zappy. Tutti i diritti riservati.</footer>
 
 <a href="https://wa.me/393791243514" id="whatsapp-button" target="_blank">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Chatta su WhatsApp"/>
+  
 </a>
 
 <script>
@@ -374,5 +506,12 @@ document.querySelectorAll('.card').forEach(card=>{
   });
 });
 </script>
+
+
+<a href="https://wa.me/393791243514" target="_blank" class="whatsapp-float">
+  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 32 32" fill="white">
+    <path d="M16 .4C7.5.4.5 7.4.5 16c0 2.8.8 5.5 2.3 7.8L.4 31.6l7.9-2.4c2.2 1.2 4.8 1.8 7.4 1.8 8.6 0 15.6-7 15.6-15.6S24.6.4 16 .4zm0 28.5c-2.3 0-4.5-.6-6.5-1.8l-.5-.3-4.7 1.4 1.5-4.6-.3-.5c-1.4-2.1-2.1-4.5-2.1-7 0-7.1 5.8-12.9 12.9-12.9s12.9 5.8 12.9 12.9-5.8 12.8-12.9 12.8zm7.1-9.6c-.4-.2-2.3-1.1-2.6-1.2-.4-.1-.6-.2-.9.2s-1 1.2-1.2 1.5c-.2.2-.4.3-.8.1s-1.5-.6-2.8-1.8c-1-1-1.8-2.1-2-2.4-.2-.4 0-.6.2-.8.2-.2.4-.4.6-.6.2-.2.3-.3.4-.6.1-.2.1-.4 0-.6-.1-.2-.9-2.2-1.2-3s-.6-.7-.9-.7h-.8c-.2 0-.6.1-.9.4s-1.2 1.1-1.2 2.6 1.2 3 1.4 3.2c.2.2 2.3 3.5 5.6 4.9.8.3 1.5.6 2 .7.8.2 1.5.2 2.1.1.7-.1 2.3-1 2.6-1.8.3-.9.3-1.6.2-1.8-.1-.2-.4-.3-.8-.5z"/>
+  </svg>
+</a>
 
 </body></html>

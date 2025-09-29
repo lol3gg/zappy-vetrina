@@ -1,0 +1,905 @@
+<html lang="it"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>Zappy - Soluzione per Ordinare e Pagare</title>
+<style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #0c0c15;
+      color: white;
+    }
+
+    nav {
+      background: #0c0c15;
+      display: flex;
+      justify-content: space-between;
+      padding: 0.5rem 2rem;
+      align-items: center;
+      position: sticky;
+      top: 20px;
+      z-index: 9;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 1.5rem;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .cta {
+      background: linear-gradient(90deg, #39D9A9, #00C2FF);
+      color: white;
+      padding: 0.7rem 1.5rem;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .hero {
+      padding: 6rem 2rem;
+      margin-top: 20px;
+      text-align: center;
+      background: linear-gradient(160deg, #10101A 60%, #141421);
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero span {
+      color: #39D9A9;
+    }
+
+    .hero-images {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .hero-images img {
+      max-width: 200px;
+      border-radius: 12px;
+      border: 1px solid #444;
+    }
+
+    .section {
+      padding: 4rem 2rem;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .section h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    .card {
+      background: #1a1a2e;
+      border-radius: 12px;
+      padding: 2rem;
+      width: 300px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      text-align: center;
+    }
+
+    .card h3 {
+      color: #39D9A9;
+    }
+
+    .banner {
+      background: #39D9A9;
+      text-align: center;
+      padding: 2rem;
+      color: #000;
+      font-weight: bold;
+      font-size: 1.9rem;
+      margin-top: 2rem;
+      border-radius: 10px;
+    }
+
+    .banner a {
+      display: inline-block;
+      background: black;
+      color: white;
+      padding: 0.7rem 1.5rem;
+      margin-top: 1rem;
+      border-radius: 30px;
+      text-decoration: none;
+    }
+
+    footer {
+      background: #0c0c15;
+      padding: 2rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #999;
+    }
+
+    .popup {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: #39D9A9;
+      color: black;
+      padding: 0.5rem 2rem;
+      text-align: center;
+      font-weight: bold;
+      z-index: 100;
+    }
+
+    .popup a {
+      margin-left: 2rem;
+      color: #000;
+      font-weight: bold;
+    }
+
+    .popup-spacer {
+      height: 60px;
+    }
+
+    .mobile-hide-on-small {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .mobile-hide-on-small {
+    display: none;
+  }
+      .hero-images {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  
+    .mobile-only {
+      display: none;
+    }
+    @media (max-width: 768px) {
+      .mobile-only {
+        display: block;
+      }
+    }
+
+  
+    .gradient-text {
+      background: linear-gradient(90deg, #39D9A9, #00C2FF);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+  
+@media (max-width: 768px) {
+  .hero {
+    padding-top: 0.5rem;
+    padding-bottom: 4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding-top: 0.5rem;
+    padding-bottom: 4rem;
+  }
+
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+}
+
+.app-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+
+
+    .app-box {
+      width: 100%;
+      max-width: 300px;
+      margin: 0 auto;
+      height: 60px;
+      border-radius: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      font-weight: bold;
+      color: black;
+      font-size: 1.1rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
+
+    .app-box img {
+      width: 25px;
+      height: 25px;
+    }
+
+    @media (max-width: 768px) {
+  .app-grid {
+    flex-direction: column; /* Uno sotto l'altro */
+    align-items: center;     /* Centra i box */
+  }
+}
+@media (max-width: 768px) {
+  .app-box {
+    width: 100%;        /* Occupa tutta la larghezza del contenitore */
+    max-width: 800px;   /* Limite massimo per non essere troppo grande */
+  }
+}
+
+  
+@media (max-width: 768px) {
+  .hero {
+    padding-top: 0.5rem;
+    padding-bottom: 2rem;
+  }
+
+  .hero h1 {
+    font-size: 1.9rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .hero p {
+    font-size: 1.2rem;
+    margin-bottom: 0;
+  }
+
+  .section h2 {
+    font-size: 1.9rem;
+    margin-bottom: 1rem;
+  }
+
+  .section {
+    padding: 2rem 1rem;
+  }
+
+  .app-box {
+    height: 50px;
+    font-size: 1.2rem;
+  }
+
+  .app-box img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .app-grid {
+    gap: 0.8rem;
+  }
+}
+
+    .static-gradient-text {
+      font-weight: bold;
+      font-size: 1.8rem;
+      background: linear-gradient(90deg, #39D9A9, #00C2FF);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+  
+    .chrome-style {
+      background: linear-gradient(135deg, #127A61, #39D9A9 30%, #00C2FF 70%, #ffffff);
+      box-shadow: inset 0 1px 1px rgba(255,255,255,0.3),
+                  inset 0 -1px 1px rgba(0,0,0,0.1),
+                  0 3px 8px rgba(0,0,0,0.2);
+      color: black;
+    }
+
+  
+    @media (max-width: 768px) {
+      .app-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: center;
+      }
+      .app-grid .app-box:nth-child(5) {
+        grid-column: 1 / span 2;
+        justify-self: center;
+      }
+    }
+
+  
+.zappy-grid-section {
+  padding: 4rem 1rem;
+  width: 100%;
+  max-width: 1400px;
+  margin: auto;
+}
+
+.zappy-grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+  align-items: stretch;
+}
+
+.zappy-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.5rem;
+  border-radius: 16px;
+  text-align: center;
+  color: white;
+  background: #333;
+  box-shadow: 0 0 12px rgba(0,0,0,0.2);
+  transition: transform 0.2s;
+}
+
+.zappy-card:hover {
+  transform: scale(1.02);
+}
+
+.zappy-card h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.9rem;
+}
+
+.zappy-card img {
+  width: 100%;
+  max-height: 160px;
+  object-fit: contain;
+  margin-top: auto;
+}
+
+
+.feature-box {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+.feature-box:hover {
+  opacity: 0.95;
+}
+
+#whatsapp-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  background-color: #25D366;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#whatsapp-button img {
+  width: 35px;
+  height: 35px;
+}
+
+
+@media (max-width: 768px) {
+  .grid {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+  }
+  .card {
+    margin: 0 auto;
+    width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  .app-box {
+    width: 100vw !important;
+    max-width: none !important;
+    border-radius: 0 !important;
+    height: 60px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .app-box {
+    width: calc(100vw - 2rem) !important;
+    margin: 0 auto !important;
+    border-radius: 40px !important;
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .app-box {
+    height: 50px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .app-box {
+    height: 45px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .app-box {
+    margin-left: 1rem !important;
+    margin-right: 1rem !important;
+  }
+}
+
+@media (max-width: 768px) {
+  body, p, a, span, h1, h2, h3 {
+    font-size: 1.05rem;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.7rem;
+  }
+  h3 {
+    font-size: 1.3rem;
+  }
+  .app-box {
+    font-size: 1.2rem !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .app-box {
+    width: calc(100vw - 3rem) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .app-box {
+    width: calc(100vw - 4rem) !important;
+  }
+}
+
+#whatsapp-button {
+  position: fixed !important;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 0 1rem;
+    overflow-x: hidden;
+  }
+  .section, .hero {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  .app-box {
+    width: calc(100vw - 4.5rem) !important;
+    font-size: 1.2rem !important;
+  }
+}
+</style>
+<style id="operaUserStyle" type="text/css"></style>
+<style>
+@media (max-width: 768px) {
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .card {
+    height: auto;
+    min-height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+</style>
+</head>
+<body>
+<div class="popup">
+    🎁 Guarda ora la DEMO gratuita →
+    <a href="https://zappy-24d29.web.app" target="_blank">Vai al sito</a>
+</div>
+<div class="popup-spacer"></div>
+<nav>
+<div class="logo mobile-hide-on-small">Zappy</div>
+<a class="cta mobile-hide-on-small" href="https://wa.me/393791243514" target="_blank">Inizia ora</a>
+</nav>
+<section class="hero">
+<h1>Il modo più <span class="gradient-text" style="font-size: 1.5em; font-style: italic;"><em>VELOCE</em></span> per servire i tuoi clienti.</h1>
+<p>Ordina e paga con un tap. Niente code, niente app da scaricare.</p> </section>
+<section class="section" style="text-align:center;">
+<h2 class="static-gradient-text">L'unico sistema con app integrate (opzionali)</h2>
+<div class="app-grid">
+<div class="app-box-container">
+<div class="app-box chrome-style">
+<img alt="Zappy Love" src="immagini/qr_cuore.png"/>
+<span>Zappy</span>
+<span class="arrow" onclick="togglePopup(1)">▼</span>
+</div>
+<div class="popup-box" id="popup-1">
+<div class="popup-content">
+<span class="close" onclick="togglePopup(1)">✕</span>
+<p>Con <strong>Zappy Match</strong> i clienti possono chattare tra tavoli, scoprire nuove persone e socializzare direttamente dal proprio posto. Ideale per eventi e serate dinamiche.</p>
+</div>
+</div>
+</div>
+<div class="app-box-container">
+<div class="app-box chrome-style">
+<img alt="Zappy Baby" src="immagini/qr_bambino.png"/>
+<span>Zappy</span>
+<span class="arrow" onclick="togglePopup(2)">▼</span>
+</div>
+<div class="popup-box" id="popup-2">
+<div class="popup-content">
+<span class="close" onclick="togglePopup(2)">✕</span>
+<p><strong>Zappy Land</strong> è l'app pensata per intrattenere bambini e ragazzi nel locale, con giochi, disegni e animazioni divertenti per tutte le età.</p>
+</div>
+</div>
+</div>
+<div class="app-box-container">
+<div class="app-box chrome-style">
+<img alt="Zappy Game" src="immagini/qr_game.png"/>
+<span>Zappy</span>
+<span class="arrow" onclick="togglePopup(3)">▼</span>
+</div>
+<div class="popup-box" id="popup-3">
+<div class="popup-content">
+<span class="close" onclick="togglePopup(3)">✕</span>
+<p><strong>Zappy Photo</strong> permette a ogni cliente di pubblicare una foto scattata nel locale. Crea una gallery condivisa e stimola la partecipazione, ideale anche per promozioni social!</p>
+</div>
+</div>
+</div>
+<div class="app-box-container">
+<div class="app-box chrome-style">
+<img alt="Zappy WiFi" src="immagini/qr_wifi.png"/>
+<span>Zappy</span>
+<span class="arrow" onclick="togglePopup(4)">▼</span>
+</div>
+<div class="popup-box" id="popup-4">
+<div class="popup-content">
+<span class="close" onclick="togglePopup(4)">✕</span>
+<p><strong>Zappy Room</strong> è l'app perfetta per sfidarsi a quiz, da soli o in gruppo! Diverse categorie e partite a tempo rendono l'esperienza coinvolgente e competitiva.</p>
+</div>
+</div>
+</div>
+<div class="app-box-container">
+<div class="app-box chrome-style">
+<img alt="Zappy Rainbow" src="immagini/qr_rainbow.png"/>
+<span>Zappy</span>
+<span class="arrow" onclick="togglePopup(5)">▼</span>
+</div>
+<div class="popup-box" id="popup-5">
+<div class="popup-content">
+<span class="close" onclick="togglePopup(5)">✕</span>
+<p><strong>Zappy Lucky</strong> attiva una ruota della fortuna ad ogni pagamento: i clienti possono vincere coupon sconto da usare sul prossimo ordine, previo accordo con il barista.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="section" id="funzionalita">
+<h2>Scopri i nostri kit</h2><p style="margin-top: -1rem; margin-bottom: 2rem; font-style: italic; font-size: 1rem; color: #ccc; text-align: center;">(Clicca sui riquadri per scoprire di più)</p>
+<div class="grid">
+<div class="card">
+<a class="feature-box" href="come-funziona.html"><h3>Come funziona per il cliente</h3>
+</a><p><a class="feature-box" href="come-funziona.html">Scopri come Zappy semplifica il servizio: QR, comande e pagamenti in un flusso continuo.</a></p>
+</div>
+<div class="card">
+<a class="feature-box" href="starter-kit.html"><h3>Starter kit e prezzi</h3>
+</a><p><a class="feature-box" href="starter-kit.html">Tutto quello che ti serve per partire: hardware, abbonamenti, installazione e supporto.</a></p>
+</div>
+<div class="card">
+<a class="feature-box" href="starter-kit-pro.html">
+<h3>Starter kit PRO e prezzi</h3>
+<p>Scopri il kit completo con stampante, tablet, POS Zappy e assistenza premium: tutto incluso a un prezzo trasparente.</p>
+</a>
+</div>
+</div>
+</section>
+
+<section class="section" style="text-align: center; background: #12121f;">
+  <h2 class="static-gradient-text">🎨 Personalizzazione Totale</h2>
+  <p style="max-width: 700px; margin: 1rem auto; font-size: 1.1rem; color: #ccc;">
+    Ogni menù, colore, prezzo e contenuto del sito sarà <strong>completamente personalizzato</strong> in base alle esigenze del tuo locale.<br/>
+    Dal logo ai prodotti, tutto verrà adattato con cura per rispecchiare al meglio il tuo stile.
+  </p>
+  <ul style="text-align: left; display: inline-block; margin: 1rem auto; padding: 0; color: #ccc; font-size: 1rem; line-height: 1.8;">
+    <li>✅ Nomi e descrizioni dei prodotti</li>
+    <li>✅ Immagini e loghi</li>
+    <li>✅ Colori del sito</li>
+    <li>✅ Prezzi personalizzati</li>
+    <li>✅ Sezioni su richiesta</li>
+  </ul>
+  <div class="banner" style="font-size: 1.1rem; padding: 1rem;">
+    <span style="font-size: 0.95rem;">Guarda un esempio reale →</span>
+    <a href="https://zappy-24d29.web.app" target="_blank" style="font-size: 0.9rem;">Vai alla demo</a>
+  </div>
+</section>
+<section class="section" style="background:#0e0e1c; text-align: center;">
+<h2 class="static-gradient-text">Perché scegliere Zappy</h2>
+<div class="grid">
+<div class="card">
+<h3>💳 Aumento dello scontrino medio</h3>
+<p>Ogni cliente può ordinare di più in autonomia, con suggerimenti intelligenti.</p>
+</div>
+<div class="card">
+<h3>⚡️ Riduzione dei tempi di attesa</h3>
+<p>Gli ordini arrivano direttamente in cassa o alla stampante, subito pronti.</p>
+</div>
+<div class="card">
+<h3>🧍‍♂️ Più libertà per il personale</h3>
+<p>Il team è più libero di seguire i clienti senza stress e corse inutili.</p>
+</div>
+<div class="card">
+<h3>🎯 Nessun errore nelle comande</h3>
+<p>Ordini chiari e precisi, senza più fraintendimenti o errori di scrittura.</p>
+</div>
+</div>
+<h2 class="static-gradient-text" style="margin-top: 4rem;">A chi è rivolto?</h2>
+<p style="font-size: 1rem; max-width: 700px; margin: auto;">
+        Perfetto per: Bar, Pub, Pizzerie, Chioschi, Stabilimenti Balneari, Street Food, Eventi, Sagre, Feste private e molto altro.
+      </p>
+</section>
+<section class="section" id="contatti" style="text-align:center;">
+<h2>Contattaci</h2>
+<p>Vuoi portare Zappy nel tuo locale? Scrivici su WhatsApp.</p>
+<a class="cta" href="https://wa.me/393791243514">Contattaci ora</a>
+</section>
+<footer>
+    © 2025 Zappy. Tutti i diritti riservati.
+  </footer>
+<style>
+  .arrow {
+    cursor: pointer;
+    font-size: 1.5rem;
+    margin-left: 0.3rem;
+  }
+  .popup-box {
+    display: none;
+    background: #39D9A9;
+    color: black;
+    border-radius: 12px;
+    margin: 0.5rem auto;
+    padding: 1rem;
+    width: 90%;
+    max-width: 400px;
+  }
+  .popup-content {
+    position: relative;
+  }
+  .popup-content .close {
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    cursor: pointer;
+    font-size: 1.2rem;
+  }
+
+.zappy-grid-section {
+  padding: 4rem 1rem;
+  width: 100%;
+  max-width: 1400px;
+  margin: auto;
+}
+
+.zappy-grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+  align-items: stretch;
+}
+
+.zappy-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.5rem;
+  border-radius: 16px;
+  text-align: center;
+  color: white;
+  background: #333;
+  box-shadow: 0 0 12px rgba(0,0,0,0.2);
+  transition: transform 0.2s;
+}
+
+.zappy-card:hover {
+  transform: scale(1.02);
+}
+
+.zappy-card h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.zappy-card img {
+  width: 100%;
+  max-height: 160px;
+  object-fit: contain;
+  margin-top: auto;
+}
+
+
+.feature-box {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+.feature-box:hover {
+  opacity: 0.95;
+}
+</style>
+<script>
+  function togglePopup(id) {
+    // Chiudi tutti i popup
+    const allPopups = document.querySelectorAll('.popup-box');
+    allPopups.forEach(p => {
+      if (p.id !== "popup-" + id) {
+        p.style.display = "none";
+      }
+    });
+
+    // Alterna quello cliccato
+    const el = document.getElementById("popup-" + id);
+    if (el.style.display === "block") {
+      el.style.display = "none";
+    } else {
+      el.style.display = "block";
+    }
+  }
+</script>
+<style>
+  .arrow {
+    cursor: pointer;
+    font-size: 1.2rem;
+    margin-left: 0.3rem;
+  }
+
+  .app-box-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .popup-box {
+    display: none;
+    position: absolute;
+    top: 70px;
+    background: linear-gradient(135deg, rgba(57, 217, 169, 0.9), rgba(0, 194, 255, 0.9));;
+    color: black;
+    border-radius: 12px;
+    padding: 1rem;
+    width: 260px;
+    z-index: 10;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  }
+
+  .popup-content {
+    position: relative;
+    font-size: 0.95rem;
+  }
+
+  .popup-content .close {
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    cursor: pointer;
+    font-size: 1.2rem;
+  }
+
+.zappy-grid-section {
+  padding: 4rem 1rem;
+  width: 100%;
+  max-width: 1400px;
+  margin: auto;
+}
+
+.zappy-grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+  align-items: stretch;
+}
+
+.zappy-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.5rem;
+  border-radius: 16px;
+  text-align: center;
+  color: white;
+  background: #333;
+  box-shadow: 0 0 12px rgba(0,0,0,0.2);
+  transition: transform 0.2s;
+}
+
+.zappy-card:hover {
+  transform: scale(1.02);
+}
+
+.zappy-card h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.zappy-card img {
+  width: 100%;
+  max-height: 160px;
+  object-fit: contain;
+  margin-top: auto;
+}
+
+
+.feature-box {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+.feature-box:hover {
+  opacity: 0.95;
+}
+
+
+@media (max-width: 768px) {
+  .app-grid {
+    display: block;
+  }
+
+  .app-box-container {
+    margin-bottom: 1rem;
+    padding: 0 1rem;
+  }
+
+  .app-box {
+    width: 100%;
+    margin: 0 auto;
+    height: 60px;
+  }
+
+  .app-box img {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+
+
+@media (max-width: 768px) {
+  .card {
+    height: auto;
+    min-height: 140px;
+    padding: 1rem 1rem;
+    font-size: 0.9rem;
+  }
+}
+</style>
+<a href="https://wa.me/393791243514" id="whatsapp-button" target="_blank">
+<img alt="Chatta su WhatsApp" src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"/>
+</a>
+</body></html>
